@@ -19,7 +19,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     PasswordEncoder encoder;
 
-
     @Override
     public void register(UserDto userDto) throws Exception {
         User user = new User();

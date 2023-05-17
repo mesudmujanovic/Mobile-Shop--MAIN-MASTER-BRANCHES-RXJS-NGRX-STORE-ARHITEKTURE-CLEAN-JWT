@@ -1,8 +1,5 @@
 package mobileshop.Entity;
-
-
 import lombok.*;
-
 import javax.persistence.*;
 
 @Entity

@@ -1,6 +1,5 @@
 package mobileshop.Security.Services;
 
-
 import mobileshop.Entity.User;
 import mobileshop.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +20,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         User user = userRepository.findByUsername(username);
         return UserDetailsImpl.build(user);
     }
-
 }
 

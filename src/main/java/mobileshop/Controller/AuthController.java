@@ -1,6 +1,4 @@
 package mobileshop.Controller;
-
-
 import mobileshop.Service.UserService;
 import mobileshop.Model.DTO.UserDto;
 import mobileshop.Request.LoginRequest;
@@ -41,12 +39,9 @@ public class AuthController {
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
-
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtUtils.generateJwtToken(authentication);
-
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-
         return ResponseEntity.ok(new JwtResponse(jwt, userDetails.getId(),
                 userDetails.getUsername()));
     }

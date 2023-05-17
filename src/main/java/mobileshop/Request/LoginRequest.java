@@ -1,8 +1,6 @@
 package mobileshop.Request;
-
 import com.sun.istack.NotNull;
 import lombok.*;
-
 @Getter
 @Setter
 @NoArgsConstructor

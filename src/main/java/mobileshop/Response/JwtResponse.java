@@ -1,8 +1,5 @@
 package mobileshop.Response;
-
 import lombok.*;
-import org.springframework.stereotype.Service;
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,5 +16,4 @@ public class JwtResponse {
         this.id = id;
         this.username = username;
     }
-
 }

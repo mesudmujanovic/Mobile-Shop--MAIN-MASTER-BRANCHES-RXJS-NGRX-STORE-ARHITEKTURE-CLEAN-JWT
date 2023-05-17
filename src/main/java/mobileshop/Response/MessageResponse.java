@@ -1,5 +1,4 @@
 package mobileshop.Response;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
