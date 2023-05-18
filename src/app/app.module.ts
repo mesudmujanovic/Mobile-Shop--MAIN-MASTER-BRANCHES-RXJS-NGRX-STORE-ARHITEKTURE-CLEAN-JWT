@@ -7,6 +7,11 @@ import { SignupComponent } from './component/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './component/main/main.component';
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './store/reducers/app.reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,10 +23,12 @@ import { MainComponent } from './component/main/main.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
-
-  ],
+    ReactiveFormsModule,
+    StoreModule.forRoot(appReducers),
+    StoreDevtoolsModule.instrument({maxAge:25})
+      ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

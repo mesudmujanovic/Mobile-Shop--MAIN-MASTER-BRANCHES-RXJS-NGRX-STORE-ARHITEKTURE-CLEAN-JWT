@@ -3,16 +3,29 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../Interface/User.interface';
 import { BASE_URL } from '../const/url';
+import { AppState } from '../store/state/app.state';
+import { Store } from '@ngrx/store';
+import { getUser } from '../store/selectors/selector';
+import { AddUser } from '../store/action/action';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private store: Store<AppState>) { }
 
   login(username: string, password: string): Observable<any> {
     const body = { username, password }
     return this.http.post<User>(`${BASE_URL}/api/auth/login`, body);
+  }
+  
+  get user(){
+    return this.store.select(getUser);
+  };
+
+  saveUser(user: User){
+    this.store.dispatch(new AddUser(user));
   }
 }

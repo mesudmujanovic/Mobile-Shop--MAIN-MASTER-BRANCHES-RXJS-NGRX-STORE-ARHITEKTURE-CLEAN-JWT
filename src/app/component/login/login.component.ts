@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Observable, tap } from 'rxjs';
 import { User } from 'src/app/Interface/User.interface';
 import { LoginService } from 'src/app/service/login.service';
+import { AddUser } from 'src/app/store/action/action';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +13,19 @@ import { LoginService } from 'src/app/service/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+   
+  loginUser$: Observable<User[]> = this.loginService.user;
 
   loginForm: FormGroup
 
   constructor(private formBuilder: FormBuilder,
     private loginService: LoginService,
-    private router: Router) {
-  }
+    private router: Router,
+    ) {}
+
+    addUser(username: {username:string, password:string}){
+    this.loginService.saveUser(username);
+    }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({

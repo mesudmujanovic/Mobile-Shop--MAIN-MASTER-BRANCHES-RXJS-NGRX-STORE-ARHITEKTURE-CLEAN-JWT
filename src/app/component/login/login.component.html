@@ -3,12 +3,19 @@
 <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
     <div>
         <label for="username">Username</label>
-        <input type="text" name="username" id="username" formControlName="username">
+        <input type="text" name="username" id="username" formControlName="username" #username>
     </div>
 
     <div>
         <label for="password">password</label>
-        <input type="password" name="password" id="password" formControlName="password">
+        <input type="password" name="password" id="password" formControlName="password" #password>
     </div>
-    <button type="submit" [disabled]="!loginForm.valid">Save</button>
+    <button type="submit" (click)="addUser({username: username.value, password: password.value})"  [disabled]="!loginForm.valid">Save</button>
+    <div *ngIf="loginUser$ |async as loginUser">
+        <li *ngFor="let user of loginUser">
+             {{user.username}}
+        </li>
+    </div>
 </form>
+
+
