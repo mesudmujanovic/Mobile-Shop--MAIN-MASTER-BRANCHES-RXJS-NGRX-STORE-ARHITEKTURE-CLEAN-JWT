@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { catchError, of } from 'rxjs';
+import { Router } from '@angular/router';
+import { tap } from 'rxjs';
 import { SignupService } from 'src/app/service/signup.service';
 
 @Component({
@@ -13,32 +14,28 @@ export class SignupComponent {
   postForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-              private signUpService: SignupService)
-  {
-   this.postForm = this.formBuilder.group({
-    username: ['', Validators.required],
-    password: ['', Validators.required]
-   })
+    private signUpService: SignupService,
+    private router: Router) {
+    this.postForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    })
   }
 
-
-  onSubmit(){
-    if(this.postForm.valid){
-      const username = this.postForm.value.username;
-      const password = this.postForm.value.password;
+  onSubmit() {
+    if (this.postForm.valid) {
+      const username = this.postForm.get('username')?.value;
+      const password = this.postForm.get('password')?.value;
       this.signUpService.signUp(username, password).pipe(
-        catchError(error => {
-          console.log(error);
-          return of([])
+        tap(response => {
+          console.log("added", response);
+          this.router.navigate(['/login']);
         })
-      ).subscribe( response =>{
-        console.log("uspesno", response);
-      },
-      error=>{
-        console.log(error); 
-      })
-      
+      ).subscribe(() => { },
+        error => {
+          console.log(error);
+        })
+    }
   }
-}
 
 }
