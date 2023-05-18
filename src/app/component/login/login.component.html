@@ -10,7 +10,7 @@
         <label for="password">password</label>
         <input type="password" name="password" id="password" formControlName="password" #password>
     </div>
-    <button type="submit" (click)="addUser({username: username.value, password: password.value})"  [disabled]="!loginForm.valid">Save</button>
+    <button type="submit" (click)="addUser()"  [disabled]="!loginForm.valid">Save</button>
     <div *ngIf="loginUser$ |async as loginUser">
         <li *ngFor="let user of loginUser">
              {{user.username}}

@@ -23,9 +23,17 @@ export class LoginComponent {
     private router: Router,
     ) {}
 
-    addUser(username: {username:string, password:string}){
-    this.loginService.saveUser(username);
+    addUser(){
+      const user: User = {
+        username: this.loginForm.get('username').value,
+        password: this.loginForm.get('password').value
+      };
+      this.loginService.saveUser(user);
     }
+    //oba nacina prihvatljiva i dobra...izabrao sam ovaj nacin jer mi je kod citljiviji i ako budem dodavao jos inputa u formu lakse mi je da im kontrolisem odavde
+    // addUser(username: {username:string, password:string}){
+    //  this.loginService.saveUser(username)
+    // }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
