@@ -19,4 +19,8 @@ public class Street {
     private Long id;
 
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "cityId")
+    private City city;
 }

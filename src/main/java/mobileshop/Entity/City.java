@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -18,4 +19,7 @@ public class City {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
     public String name;
+
+    @OneToMany(mappedBy = "city", fetch = FetchType.LAZY)
+    private List<Street> streets;
 }

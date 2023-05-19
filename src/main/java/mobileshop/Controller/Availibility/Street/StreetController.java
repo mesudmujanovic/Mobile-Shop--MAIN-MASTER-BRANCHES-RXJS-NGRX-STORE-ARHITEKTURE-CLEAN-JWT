@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
@@ -17,10 +19,10 @@ public class StreetController {
     @Autowired
     private StreetService streetService;
 
-    @PostMapping("/street")
-    public ResponseEntity<StreetResponse> saveStreet(@RequestBody StreetRequest streetRequest){
+    @PostMapping("/street/cityId/{id}")
+    public ResponseEntity<StreetResponse> saveStreet(@PathVariable Long id, @RequestBody StreetRequest streetRequest){
         StreetDto streetDto = StreetDto.fromRequestToDto(streetRequest);
-        StreetDto saveStreet = streetService.saveStreet(streetDto);
+        StreetDto saveStreet = streetService.saveStreet(streetDto,id);
         return ResponseEntity.ok(saveStreet.fromDtoToResponse());
     }
 
