@@ -1,4 +1,4 @@
-package mobileshop.Response;
+package mobileshop.Infrastucture.Response.UserJwt;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

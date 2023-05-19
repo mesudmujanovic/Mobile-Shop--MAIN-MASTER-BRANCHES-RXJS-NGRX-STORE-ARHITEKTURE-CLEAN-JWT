@@ -1,10 +1,10 @@
-package mobileshop.Model.DTO;
+package mobileshop.Infrastucture.DTO.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import mobileshop.Request.SignupRequest;
+import mobileshop.Infrastucture.Request.User.SignupRequest;
 
 @Data
 @AllArgsConstructor

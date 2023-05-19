@@ -1,10 +1,10 @@
-package mobileshop.Controller;
+package mobileshop.Controller.Auth;
 import mobileshop.Service.UserService;
-import mobileshop.Model.DTO.UserDto;
-import mobileshop.Request.LoginRequest;
-import mobileshop.Request.SignupRequest;
-import mobileshop.Response.JwtResponse;
-import mobileshop.Response.MessageResponse;
+import mobileshop.Infrastucture.DTO.User.UserDto;
+import mobileshop.Infrastucture.Request.User.LoginRequest;
+import mobileshop.Infrastucture.Request.User.SignupRequest;
+import mobileshop.Infrastucture.Response.UserJwt.JwtResponse;
+import mobileshop.Infrastucture.Response.UserJwt.MessageResponse;
 import mobileshop.Security.Services.UserDetailsImpl;
 import mobileshop.Security.jwt.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;

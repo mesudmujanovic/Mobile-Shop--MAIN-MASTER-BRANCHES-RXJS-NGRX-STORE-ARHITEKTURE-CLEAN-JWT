@@ -1,4 +1,4 @@
-package mobileshop.Request;
+package mobileshop.Infrastucture.Request.User;
 import lombok.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;

@@ -1,4 +1,4 @@
-package mobileshop.Request;
+package mobileshop.Infrastucture.Request.User;
 import com.sun.istack.NotNull;
 import lombok.*;
 @Getter
