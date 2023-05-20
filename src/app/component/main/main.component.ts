@@ -12,63 +12,48 @@ import { CityService } from 'src/app/service/city.service';
 })
 export class MainComponent {
 
- cityForm: FormGroup
- allCity$: Observable<City[]>
-
- selectedCity: City | null;
- selectedStreet: Street | null;
- cityAndStreet: any;
-
-
+  cityForm: FormGroup
+  allCity$: Observable<City[]>
+  selectedCity: City | null;
+  selectedStreet: Street | null;
+  cityAndStreet: any;
 
   constructor(private formBudiler: FormBuilder,
-              private cityService: CityService){
-            
+    private cityService: CityService) {
   };
-
-  onStreetChange() {
-    console.log(this.selectedStreet);
-    // Dodajte dodatne radnje koje želite izvršiti kad se odabere ulica
-  }
-  
 
   onCityChange() {
     if (this.selectedCity) {
-      const filteredStreets = this.selectedCity.streets;
-      this.selectedStreet = filteredStreets.length > 0 ? filteredStreets[0] : null;
-      console.log(this.selectedCity);
+      const filterCity = this.selectedCity.streets;
+      this.selectedStreet = filterCity.length > 0 ? filterCity[0] : null;
     } else {
       this.selectedStreet = null;
     }
   }
 
-  saveSelection(){
-    if(this.selectedCity && this.selectedStreet){
+  saveStreetAndCity(){
+    if(this.selectedStreet && this.selectedCity){
       this.cityAndStreet = {
         city: this.selectedCity,
         street: this.selectedStreet
-      };
+      }
       console.log(this.cityAndStreet);
     }
   }
-  
-  
 
-  getAllCity(): Observable<City[]>{
-   return this.allCity$ = this.cityService.getAllCity().pipe(
-    catchError( error =>{
-      console.log(error);
-      return of([]);
-    })
-   )
+  getAllCity(): Observable<City[]> {
+    return this.allCity$ = this.cityService.getAllCity().pipe(
+      catchError(error => {
+        console.log(error);
+        return of([]);
+      })
+    )
   }
 
-
-  ngOnInit(){
+  ngOnInit() {
     this.cityForm = this.formBudiler.group({
-      name:[ "", Validators.required ]
+      name: ["", Validators.required]
     });
     this.getAllCity();
   }
-  
 }
