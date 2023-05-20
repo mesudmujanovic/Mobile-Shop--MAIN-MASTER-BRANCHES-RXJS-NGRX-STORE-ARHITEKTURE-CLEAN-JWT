@@ -1,8 +1,8 @@
-import { UserState, initalUserState } from './user.state';
+import {SalesUserState, initalUserState } from './user.state';
 
 
 export interface AppState {
-    user: UserState;
+    user: SalesUserState;
 }
 
 export const initalAppState: AppState = {

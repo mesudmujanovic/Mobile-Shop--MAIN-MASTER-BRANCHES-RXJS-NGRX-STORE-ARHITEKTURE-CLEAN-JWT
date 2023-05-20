@@ -16,8 +16,8 @@ export class MainComponent {
   allCity$: Observable<City[]>
   selectedCity: City | null;
   selectedStreet: Street | null;
-  cityAndStreet: any;
-
+  cityStreet$: Observable<City[]> = this.cityService.city;
+  cityAndStreet:any
   constructor(private formBudiler: FormBuilder,
     private cityService: CityService) {
   };
@@ -37,7 +37,9 @@ export class MainComponent {
         city: this.selectedCity,
         street: this.selectedStreet
       }
+      this.cityService.saveCity(this.cityAndStreet)
       console.log(this.cityAndStreet);
+      this.cityStreet$ = this.cityAndStreet;
     }
   }
 
