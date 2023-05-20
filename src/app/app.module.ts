@@ -10,7 +10,7 @@ import { MainComponent } from './component/main/main.component';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './store/reducers/app.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     HttpClientModule,
     ReactiveFormsModule,
     StoreModule.forRoot(appReducers),
-    StoreDevtoolsModule.instrument({maxAge:25})
+    StoreDevtoolsModule.instrument({maxAge:25}),
+    FormsModule
       ],
   providers: [],
   bootstrap: [AppComponent]

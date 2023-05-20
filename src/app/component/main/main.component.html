@@ -1,1 +1,19 @@
-<p>main works!</p>
+<div>
+    <div *ngIf="allCity$ | async as allCity">
+        <h2>Odaberite grad</h2>
+        <select [(ngModel)]="selectedCity" (change)="onCityChange()">
+          <option *ngFor="let city of allCity" [ngValue]="city">{{ city.name }}</option>
+        </select>
+      </div>
+    
+      <div *ngIf="selectedCity">
+        <h2>Ulice u odabranom gradu</h2>
+        <select [(ngModel)]="selectedStreet" (change)="onStreetChange()">
+          <option [ngValue]="street" *ngFor="let street of selectedCity.streets">{{ street.name }}</option>
+        </select>
+      </div>
+      <button (click)="saveSelection()"
+       [disabled]="!selectedCity || !selectedStreet">Save</button>
+</div>
+  
+

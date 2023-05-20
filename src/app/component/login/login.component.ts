@@ -15,7 +15,6 @@ import { AddUser } from 'src/app/store/action/action';
 export class LoginComponent {
    
   loginUser$: Observable<User[]> = this.loginService.user;
-
   loginForm: FormGroup
 
   constructor(private formBuilder: FormBuilder,
@@ -64,7 +63,7 @@ export class LoginComponent {
           this.router.navigate(['/main']);
         })
       ).subscribe(() => {
-        console.log("error");
+        console.log();
       })
     } else {
       console.log("error");
