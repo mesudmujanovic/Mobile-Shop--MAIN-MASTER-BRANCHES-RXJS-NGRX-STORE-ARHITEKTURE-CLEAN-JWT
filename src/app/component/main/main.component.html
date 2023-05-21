@@ -12,7 +12,7 @@
 <div *ngIf="selectedCity">
   <h2>odaberite ulicu</h2>
   <select [(ngModel)]="selectedStreet">
-    <option *ngFor="let street of selectedCity.streets" (ngValude)="street">
+    <option *ngFor="let street of selectedCity.streets" (ngValue)="street">
       {{street.name}}
     </option>
   </select>

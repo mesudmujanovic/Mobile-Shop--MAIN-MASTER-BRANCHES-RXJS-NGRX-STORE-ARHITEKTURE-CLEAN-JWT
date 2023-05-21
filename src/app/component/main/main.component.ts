@@ -16,8 +16,8 @@ export class MainComponent {
   allCity$: Observable<City[]>
   selectedCity: City | null;
   selectedStreet: Street | null;
-  cityStreet$: Observable<City[]> = this.cityService.city;
-  cityAndStreet:any
+  cityStreet = this.cityService.city;
+  cityAndStreet: any;
   constructor(private formBudiler: FormBuilder,
     private cityService: CityService) {
   };
@@ -31,15 +31,14 @@ export class MainComponent {
     }
   }
 
-  saveStreetAndCity(){
-    if(this.selectedStreet && this.selectedCity){
+  saveStreetAndCity() {
+    if (this.selectedCity && this.selectedStreet) {
       this.cityAndStreet = {
         city: this.selectedCity,
         street: this.selectedStreet
       }
-      this.cityService.saveCity(this.cityAndStreet)
+      this.cityService.saveCity(this.cityAndStreet);
       console.log(this.cityAndStreet);
-      this.cityStreet$ = this.cityAndStreet;
     }
   }
 
@@ -56,6 +55,8 @@ export class MainComponent {
     this.cityForm = this.formBudiler.group({
       name: ["", Validators.required]
     });
-    this.getAllCity();
+    this.getAllCity().subscribe(user => {
+      console.log("allcity sub", user);
+    });
   }
 }

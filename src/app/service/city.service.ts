@@ -7,6 +7,7 @@ import { getCity } from '../store/selectors/selector';
 import { AppState } from '../store/state/app.state';
 import { Store } from '@ngrx/store';
 import { AddCity } from '../store/action/action';
+import { SessionService } from './session.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,21 +15,23 @@ import { AddCity } from '../store/action/action';
 export class CityService {
 
   constructor(private http: HttpClient,
-             private store: Store<AppState>) { }
+    private store: Store<AppState>,
+    private sessionService: SessionService) { }
 
-  public addCity(city: City): Observable<City>{
-    return this.http.post<City>(`${BASE_URL}/api/saveCity`,city)
+  public addCity(city: City): Observable<City> {
+    return this.http.post<City>(`${BASE_URL}/api/saveCity`, city)
   }
 
-  public getAllCity(): Observable<City[]>{
+  public getAllCity(): Observable<City[]> {
     return this.http.get<City[]>(`${BASE_URL}/api/getAllCity`)
   }
 
-  get city(){
+  get city() {
     return this.store.select(getCity)
   }
 
-  saveCity(city: City){
+  saveCity(city: City) {
+    this.sessionService.saveCityToSessionStorage(city);
     this.store.dispatch(new AddCity(city));
   }
 }
