@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
+import { City } from 'src/app/Interface/CityInterface';
 import { User } from 'src/app/Interface/User.interface';
 import { LoginService } from 'src/app/service/login.service';
+import { SessionService } from '../../service/session.service';
 
 @Component({
   selector: 'app-login',
@@ -14,10 +16,11 @@ export class LoginComponent {
 
   loginUser$: Observable<User[]> = this.loginService.user;
   loginForm: FormGroup
-
+ 
   constructor(private formBuilder: FormBuilder,
     private loginService: LoginService,
-    private router: Router,) { }
+    private router: Router,
+    private sessionService: SessionService) { }
 
   onLogin() {
     if (this.loginForm.valid) {
