@@ -28,8 +28,6 @@ public class StreetImpl implements StreetService {
         return StreetDtoMapper.INSTANCE.apply(saveStreet);
     }
 
-
-
     @Override
     public StreetDto deleteStreet(Long id) {
         Street street = streetRepository.findById(id).orElseThrow(()-> new RuntimeException("No found id"));
