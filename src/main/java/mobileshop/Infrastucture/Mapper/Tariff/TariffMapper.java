@@ -1,8 +1,11 @@
 package mobileshop.Infrastucture.Mapper.Tariff;
 
 import mobileshop.Entity.Tariff;
-import mobileshop.Infrastucture.DTO.Tariff.TariffDto;
+import mobileshop.Infrastucture.DTO.TariffDto;
+import mobileshop.Infrastucture.Mapper.Price.PriceMapper;
 import mobileshop.Intergration.DtoMapper;
+
+import java.util.stream.Collectors;
 
 public enum TariffMapper  implements DtoMapper<Tariff, TariffDto> {
     INSTANCE;
@@ -13,6 +16,7 @@ public enum TariffMapper  implements DtoMapper<Tariff, TariffDto> {
         tariff.setId(tariffDto.getId());
         tariff.setSku(tariffDto.getSku());
         tariff.setSpeed(tariffDto.getSpeed());
-        return tariff;
+        tariff.setPriceList(tariffDto.getPriceList().stream().map(prices-> PriceMapper.INSTANCE.apply(prices)).collect(Collectors.toList()));
+         return tariff;
     }
 }

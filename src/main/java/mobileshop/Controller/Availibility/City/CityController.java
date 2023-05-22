@@ -1,9 +1,9 @@
 package mobileshop.Controller.Availibility.City;
 
 
-import mobileshop.Infrastucture.DTO.City.CityDto;
-import mobileshop.Infrastucture.Request.City.CityRequest;
-import mobileshop.Infrastucture.Response.City.CityResponse;
+import mobileshop.Infrastucture.DTO.CityDto;
+import mobileshop.Infrastucture.Request.CityRequest;
+import mobileshop.Infrastucture.Response.CityResponse;
 import mobileshop.Service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

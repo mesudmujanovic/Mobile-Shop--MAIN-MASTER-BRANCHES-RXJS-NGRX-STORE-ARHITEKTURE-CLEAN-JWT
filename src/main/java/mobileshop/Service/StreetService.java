@@ -1,6 +1,6 @@
 package mobileshop.Service;
 
-import mobileshop.Infrastucture.DTO.Street.StreetDto;
+import mobileshop.Infrastucture.DTO.StreetDto;
 
 public interface StreetService {
 

@@ -1,15 +1,13 @@
 package mobileshop.Controller.Availibility.Street;
 
 
-import mobileshop.Infrastucture.DTO.Street.StreetDto;
-import mobileshop.Infrastucture.Request.Street.StreetRequest;
-import mobileshop.Infrastucture.Response.Street.StreetResponse;
+import mobileshop.Infrastucture.DTO.StreetDto;
+import mobileshop.Infrastucture.Request.StreetRequest;
+import mobileshop.Infrastucture.Response.StreetResponse;
 import mobileshop.Service.StreetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @CrossOrigin("*")
 @RestController

@@ -1,4 +1,4 @@
-package mobileshop.Infrastucture.DTO.User;
+package mobileshop.Infrastucture.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

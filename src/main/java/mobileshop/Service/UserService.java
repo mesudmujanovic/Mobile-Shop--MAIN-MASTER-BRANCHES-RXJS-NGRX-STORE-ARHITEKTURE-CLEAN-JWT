@@ -1,5 +1,5 @@
 package mobileshop.Service;
-import mobileshop.Infrastucture.DTO.User.UserDto;
+import mobileshop.Infrastucture.DTO.UserDto;
 
 public interface UserService {
 

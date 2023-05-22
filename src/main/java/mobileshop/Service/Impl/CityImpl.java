@@ -1,7 +1,7 @@
 package mobileshop.Service.Impl;
 
 import mobileshop.Entity.City;
-import mobileshop.Infrastucture.DTO.City.CityDto;
+import mobileshop.Infrastucture.DTO.CityDto;
 import mobileshop.Infrastucture.Mapper.City.CityDtoMapper;
 import mobileshop.Infrastucture.Mapper.City.CityMapper;
 import mobileshop.Repository.CityRepository;

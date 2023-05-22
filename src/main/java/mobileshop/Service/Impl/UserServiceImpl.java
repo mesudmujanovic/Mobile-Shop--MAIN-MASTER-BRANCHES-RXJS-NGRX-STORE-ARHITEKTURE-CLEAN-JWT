@@ -2,7 +2,7 @@ package mobileshop.Service.Impl;
 
 import mobileshop.Service.UserService;
 import mobileshop.Entity.User;
-import mobileshop.Infrastucture.DTO.User.UserDto;
+import mobileshop.Infrastucture.DTO.UserDto;
 import mobileshop.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

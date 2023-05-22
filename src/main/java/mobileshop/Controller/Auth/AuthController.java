@@ -1,6 +1,6 @@
 package mobileshop.Controller.Auth;
 import mobileshop.Service.UserService;
-import mobileshop.Infrastucture.DTO.User.UserDto;
+import mobileshop.Infrastucture.DTO.UserDto;
 import mobileshop.Infrastucture.Request.User.LoginRequest;
 import mobileshop.Infrastucture.Request.User.SignupRequest;
 import mobileshop.Infrastucture.Response.UserJwt.JwtResponse;

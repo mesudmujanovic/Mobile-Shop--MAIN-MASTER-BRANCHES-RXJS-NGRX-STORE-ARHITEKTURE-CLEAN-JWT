@@ -1,4 +1,4 @@
-package mobileshop.Infrastucture.Request.Street;
+package mobileshop.Infrastucture.Request;
 
 import lombok.Data;
 

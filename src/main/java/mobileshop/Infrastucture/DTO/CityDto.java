@@ -1,15 +1,12 @@
-package mobileshop.Infrastucture.DTO.City;
+package mobileshop.Infrastucture.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import mobileshop.Infrastucture.DTO.Street.StreetDto;
-import mobileshop.Infrastucture.Mapper.City.CityDtoMapper;
-import mobileshop.Infrastucture.Mapper.City.CityMapper;
 import mobileshop.Infrastucture.Mapper.Street.StreetDtoMapper;
 import mobileshop.Infrastucture.Mapper.Street.StreetMapper;
-import mobileshop.Infrastucture.Request.City.CityRequest;
-import mobileshop.Infrastucture.Response.City.CityResponse;
+import mobileshop.Infrastucture.Request.CityRequest;
+import mobileshop.Infrastucture.Response.CityResponse;
 
 import java.util.List;
 import java.util.stream.Collectors;

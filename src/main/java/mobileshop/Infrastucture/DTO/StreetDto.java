@@ -1,10 +1,10 @@
-package mobileshop.Infrastucture.DTO.Street;
+package mobileshop.Infrastucture.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import mobileshop.Infrastucture.Request.Street.StreetRequest;
-import mobileshop.Infrastucture.Response.Street.StreetResponse;
+import mobileshop.Infrastucture.Request.StreetRequest;
+import mobileshop.Infrastucture.Response.StreetResponse;
 
 @Data
 @AllArgsConstructor

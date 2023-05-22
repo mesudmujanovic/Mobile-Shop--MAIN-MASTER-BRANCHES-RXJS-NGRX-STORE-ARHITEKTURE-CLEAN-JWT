@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -15,10 +17,13 @@ import javax.persistence.*;
 public class Tariff {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String sku;
 
     private Integer speed;
+
+    @OneToMany(mappedBy = "tariff", fetch = FetchType.LAZY)
+    private List<Price>priceList;
 }

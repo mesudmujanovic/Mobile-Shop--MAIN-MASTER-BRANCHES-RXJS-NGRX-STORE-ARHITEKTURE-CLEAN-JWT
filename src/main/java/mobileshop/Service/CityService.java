@@ -1,6 +1,6 @@
 package mobileshop.Service;
 
-import mobileshop.Infrastucture.DTO.City.CityDto;
+import mobileshop.Infrastucture.DTO.CityDto;
 
 import java.util.List;
 
