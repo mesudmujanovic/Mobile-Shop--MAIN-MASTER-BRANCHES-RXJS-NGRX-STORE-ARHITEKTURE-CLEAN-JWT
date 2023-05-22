@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, catchError, of, tap } from 'rxjs';
 import { City } from 'src/app/Interface/CityInterface';
 import { Street } from 'src/app/Interface/Street.interface';
-import { User } from 'src/app/Interface/User.interface';
 import { CityService } from 'src/app/service/city.service';
 import { SessionService } from 'src/app/service/session.service';
 

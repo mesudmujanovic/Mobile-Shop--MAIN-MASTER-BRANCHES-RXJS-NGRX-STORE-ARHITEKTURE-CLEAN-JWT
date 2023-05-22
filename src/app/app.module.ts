@@ -11,13 +11,17 @@ import { StoreModule } from '@ngrx/store';
 import { appReducers } from './store/reducers/app.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FormsModule } from '@angular/forms';
+import { TariffComponent } from './component/tariff/tariff.component';
+import { PriceComponent } from './component/price/price.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    MainComponent
+    MainComponent,
+    TariffComponent,
+    PriceComponent
   ],
   imports: [
     BrowserModule,

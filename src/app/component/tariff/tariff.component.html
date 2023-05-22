@@ -1,0 +1,13 @@
+<div *ngIf="allTariff$ | async as allTariff">
+<ul>
+    <li *ngFor="let tariff of allTariff">
+        name:{{tariff.sku}} <br>
+        speed:{{tariff.speed}} <br>
+      <div *ngFor="let price of tariff.priceList">
+             Price:{{price.price}}  <br>
+             ContactDuration:{{price.contactDuration}} Month
+      </div>
+    </li>
+    
+</ul>
+</div>
