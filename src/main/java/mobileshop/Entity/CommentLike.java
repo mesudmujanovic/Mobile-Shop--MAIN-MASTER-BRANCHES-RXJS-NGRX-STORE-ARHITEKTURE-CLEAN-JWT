@@ -6,24 +6,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "tariff")
-public class Tariff {
+@Table(name = "comment_like")
+public class CommentLike {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String sku;
-
-    private Integer speed;
-
-    @OneToMany(mappedBy = "tariff", fetch = FetchType.LAZY)
-    private List<Price>priceList;
+    private Integer likeCount;
+    private Integer dislike;
+    private String commentText;
 }

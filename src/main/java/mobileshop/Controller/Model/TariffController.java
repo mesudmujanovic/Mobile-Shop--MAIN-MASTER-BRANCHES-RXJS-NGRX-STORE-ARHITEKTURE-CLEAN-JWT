@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RequestMapping("/api")
-@RestController
 @CrossOrigin("*")
+@RestController
+@RequestMapping("/api")
+
 public class TariffController {
 
     @Autowired
