@@ -16,7 +16,7 @@ export class LoginComponent {
 
   loginUser$: Observable<User[]> = this.loginService.user;
   loginForm: FormGroup
- 
+
   constructor(private formBuilder: FormBuilder,
     private loginService: LoginService,
     private router: Router,
@@ -32,7 +32,7 @@ export class LoginComponent {
           const token = response.token;
           localStorage.setItem('token', token);
           console.log('token', token);
-          this.router.navigate(['/main']);
+          this.router.navigate(['/like']);
         })
       ).subscribe(() => {
         console.log();

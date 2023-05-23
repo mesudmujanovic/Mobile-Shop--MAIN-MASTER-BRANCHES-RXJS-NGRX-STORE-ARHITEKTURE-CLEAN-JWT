@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { User } from '../Interface/User.interface';
 import { City } from '../Interface/CityInterface';
+import { LikeComService } from './like-com.service';
+import { LikeComm } from '../Interface/LikeComm.interface';
+import { Tariff } from '../Interface/Tariff.interface';
 
 
 @Injectable({
@@ -34,6 +37,24 @@ export class SessionService {
       return JSON.parse(cityJson);
     }
     return null;
+  }
+
+  saveComment(comment: any) {
+    const commentJson = JSON.stringify(comment);
+    sessionStorage.setItem('comment', commentJson);
+  }
+
+  getComment(): any | null {
+    const commentJson = sessionStorage.getItem('comment');
+    if (commentJson) {
+      return JSON.parse(commentJson);
+    }
+    return null;
+  }
+
+  saveTariff(tariff: Tariff) {
+    const tariffJson = JSON.stringify(tariff);
+    sessionStorage.setItem('tariff', tariffJson);
   }
 
 }

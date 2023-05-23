@@ -13,6 +13,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FormsModule } from '@angular/forms';
 import { TariffComponent } from './component/tariff/tariff.component';
 import { PriceComponent } from './component/price/price.component';
+import { LikeCommComponent } from './component/like-comm/like-comm.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PriceComponent } from './component/price/price.component';
     SignupComponent,
     MainComponent,
     TariffComponent,
-    PriceComponent
+    PriceComponent,
+    LikeCommComponent
   ],
   imports: [
     BrowserModule,

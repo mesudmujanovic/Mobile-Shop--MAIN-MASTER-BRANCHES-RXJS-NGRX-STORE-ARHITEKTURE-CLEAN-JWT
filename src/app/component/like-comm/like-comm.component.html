@@ -1,0 +1,31 @@
+<div *ngIf="loggedIn">
+  <button (click)="like()">Like</button>
+  <span>{{ likeCount }}</span>
+
+  <button (click)="dislike()">Dislike</button>
+  <span>{{ dislikeCount }}</span>
+
+  <input [(ngModel)]="commentText">
+  <button (click)="addComment()">Add Comment</button>
+</div>
+
+<div *ngIf="comments.length > 0">
+  <h3>Comment:</h3>
+  <ul>
+    <li *ngFor="let comment of comments">
+      {{ comment.commentText }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!loggedIn">
+  <p>Morate biti prijavljeni da biste lajkovali, dislajkovali i ostavljali komentare.</p>
+</div>
+
+<div *ngIf="comments.length > 0">
+  <div *ngIf="userComment$ | async as userComment">
+    <li *ngFor="let user of userComment">
+      UserName: {{user.username}}
+    </li>
+  </div>
+</div>

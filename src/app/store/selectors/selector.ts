@@ -13,3 +13,8 @@ export const getCity = createSelector(
     userSelectors,
     (state: SalesUserState) => state.city
 )
+
+export const getTariff = createSelector(
+    userSelectors,
+    (state: SalesUserState) => state.tariff
+)
