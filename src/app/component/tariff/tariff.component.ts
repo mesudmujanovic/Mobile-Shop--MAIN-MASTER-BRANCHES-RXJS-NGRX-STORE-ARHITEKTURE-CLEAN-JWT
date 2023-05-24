@@ -20,7 +20,7 @@ export class TariffComponent {
   selectTariff(tariff: any) {
     this.selectedTariff = tariff;
     this.tariffService.saveStoreTariff(tariff);
-    this.sessionService.saveTariff(tariff);
+    // this.sessionService.saveTariff(tariff);
   }
 
   getAllTariffs(): Observable<Tariff[]> {

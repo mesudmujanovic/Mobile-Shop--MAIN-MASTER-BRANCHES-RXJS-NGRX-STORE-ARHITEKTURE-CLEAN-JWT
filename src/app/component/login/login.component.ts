@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
-import { City } from 'src/app/Interface/CityInterface';
 import { User } from 'src/app/Interface/User.interface';
 import { LoginService } from 'src/app/service/login.service';
 import { SessionService } from '../../service/session.service';
@@ -14,7 +13,7 @@ import { SessionService } from '../../service/session.service';
 })
 export class LoginComponent {
 
-  loginUser$: Observable<User[]> = this.loginService.user;
+  loginUser$: Observable<User[]>;
   loginForm: FormGroup
 
   constructor(private formBuilder: FormBuilder,
@@ -32,7 +31,7 @@ export class LoginComponent {
           const token = response.token;
           localStorage.setItem('token', token);
           console.log('token', token);
-          this.router.navigate(['/like']);
+          this.router.navigate(['/main']);
         })
       ).subscribe(() => {
         console.log();
@@ -49,6 +48,7 @@ export class LoginComponent {
     };
     this.loginService.saveUser(user);
   }
+  //funkciju saveUser iz loginS sam mogao da pozovem u onLogin, ali sam vezbao na ovaj nacin
   //oba nacina prihvatljiva i dobra...izabrao sam ovaj nacin jer mi je kod citljiviji i ako budem dodavao jos inputa u formu lakse mi je da im kontrolisem odavde
   // addUser(username: {username:string, password:string}){
   //  this.loginService.saveUser(username)

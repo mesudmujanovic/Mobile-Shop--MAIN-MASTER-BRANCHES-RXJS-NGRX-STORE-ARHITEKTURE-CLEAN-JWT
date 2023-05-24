@@ -31,7 +31,7 @@ export class SignupComponent {
           console.log("added", response);
           this.router.navigate(['/login']);
         })
-      ).subscribe(() => { },
+      ) .subscribe(() => { },
         error => {
           console.log(error);
         })

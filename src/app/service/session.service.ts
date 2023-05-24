@@ -4,6 +4,8 @@ import { City } from '../Interface/CityInterface';
 import { LikeComService } from './like-com.service';
 import { LikeComm } from '../Interface/LikeComm.interface';
 import { Tariff } from '../Interface/Tariff.interface';
+import { SalesUserState } from '../store/state/user.state';
+import { SalesOrder } from '../Interface/salesOrder';
 
 
 @Injectable({
@@ -18,11 +20,6 @@ export class SessionService {
     sessionStorage.setItem('user', userJSON);
   }
 
-  saveCityToSessionStorage(city: City) {
-    const cityJson = JSON.stringify(city);
-    sessionStorage.setItem('city', cityJson)
-  }
-
   getUserFromSessionStorage(): User | null {
     const userJSON = sessionStorage.getItem('user');
     if (userJSON) {
@@ -31,30 +28,25 @@ export class SessionService {
     return null;
   }
 
-  getCityFromSessionStorage(): City | null {
-    const cityJson = sessionStorage.getItem('city');
-    if (cityJson) {
-      return JSON.parse(cityJson);
+setSessionStorageSalesOrder(salesOrder: SalesOrder | undefined){
+  sessionStorage.setItem("sessionStorageOrder",JSON.stringify(salesOrder));
+}
+
+  getSalesOrderSession(): SalesOrder {
+    const salesOrderString: string | null = sessionStorage.getItem("sessionStorageOrder");
+    if(!salesOrderString){
+      return{
+        tariff:{},
+        user:{},
+        city:{} 
+      }
     }
-    return null;
+    return JSON.parse(salesOrderString);
   }
 
-  saveComment(comment: any) {
-    const commentJson = JSON.stringify(comment);
-    sessionStorage.setItem('comment', commentJson);
-  }
-
-  getComment(): any | null {
-    const commentJson = sessionStorage.getItem('comment');
-    if (commentJson) {
-      return JSON.parse(commentJson);
-    }
-    return null;
-  }
-
-  saveTariff(tariff: Tariff) {
-    const tariffJson = JSON.stringify(tariff);
-    sessionStorage.setItem('tariff', tariffJson);
+  getInitalState():SalesUserState {
+    const salesOrder: SalesOrder = this.getSalesOrderSession();
+    return salesOrder as SalesUserState;
   }
 
 }

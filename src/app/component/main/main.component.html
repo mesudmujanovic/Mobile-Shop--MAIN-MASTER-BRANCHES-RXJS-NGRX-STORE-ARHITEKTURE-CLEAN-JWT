@@ -1,22 +1,20 @@
 <div>
-  <div *ngIf="allCity$ | async as allCity">
-    <h2>odaberite grad</h2>
-    <select [(ngModel)]="selectedCity" (change)="onCityChange()">
-      <option [ngValue]="city" *ngFor="let city of allCity">
+  <div *ngIf="allCity$ | async as allCity ">
+    <select [(ngModel)]="selectedCity">
+      <option [ngValue]="city" *ngFor="let city of allCity"
+      (change)="onCityChange()">
         {{city.name}}
       </option>
     </select>
-  </div>
+     </div>
 </div>
-
-<div *ngIf="selectedCity">
+ <div *ngIf="selectedCity">
   <h2>odaberite ulicu</h2>
   <select [(ngModel)]="selectedStreet">
-    <option *ngFor="let street of selectedCity.streets" (ngValue)="street">
+    <option *ngFor="let street of selectedCity.streets" [ngValue]="street">
       {{street.name}}
     </option>
   </select>
-  <button type="submit" [disabled]="!selectedCity || !selectedStreet" (click)="saveStreetAndCity()">Save</button>
+<button type="submit" [disabled]="!selectedCity && !selectedStreet"
+(click)="saveStreetAndCity()">Save</button>
 </div>
-
-

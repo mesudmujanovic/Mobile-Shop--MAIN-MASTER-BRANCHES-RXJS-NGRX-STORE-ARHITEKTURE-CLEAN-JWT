@@ -31,7 +31,7 @@ export class CityService {
   }
 
   saveCity(city: City) {
-    this.sessionService.saveCityToSessionStorage(city);
+    // this.sessionService.saveCityToSessionStorage(city);
     this.store.dispatch(new AddCity(city));
   }
 }

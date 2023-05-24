@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable, catchError, of, tap } from 'rxjs';
 import { City } from 'src/app/Interface/CityInterface';
 import { Street } from 'src/app/Interface/Street.interface';
@@ -22,13 +23,14 @@ export class MainComponent {
 
   constructor(private formBudiler: FormBuilder,
     private cityService: CityService,
-    private sessionService: SessionService) {
+    private sessionService: SessionService,
+    private router: Router) {
   };
 
   onCityChange() {
     if (this.selectedCity) {
       const filterCity = this.selectedCity.streets;
-      this.selectedStreet = filterCity.length > 0 ? filterCity[0] : null;
+      this.selectedStreet = filterCity.length > 0 ? filterCity[0] : null;  
     } else {
       this.selectedStreet = null;
     }
@@ -40,8 +42,10 @@ export class MainComponent {
         city: this.selectedCity,
         street: this.selectedStreet
       }
+      this.router.navigate(['/tariff'])
       this.cityService.saveCity(this.cityAndStreet);
       console.log(this.cityAndStreet);
+      
     }
   }
 

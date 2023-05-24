@@ -2,11 +2,8 @@ import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { LikeComm } from 'src/app/Interface/LikeComm.interface';
 import { LikeComService } from 'src/app/service/like-com.service';
-import { LoginService } from 'src/app/service/login.service';
-import { getUser } from '../../store/selectors/selector';
 import { User } from 'src/app/Interface/User.interface';
 import { SessionService } from '../../service/session.service';
-import { userReducer } from '../../store/reducers/reducers';
 
 @Component({
   selector: 'app-like-comm',
@@ -27,7 +24,6 @@ export class LikeCommComponent {
   constructor(private likeCommService: LikeComService,
     private sessionStorage: SessionService) {
   }
-
 
   like(): void {
     if (!this.isLiked) {
@@ -63,7 +59,7 @@ export class LikeCommComponent {
         (response) => {
           this.commentText = '';
           this.comments.push(response);
-          this.saveCommentToSession();
+          // this.saveCommentToSession();
         },
         (error) => {
           console.log('Greška pri dodavanju komentara:', error);
@@ -72,10 +68,9 @@ export class LikeCommComponent {
     }
   }
 
-  saveCommentToSession() {
-    this.sessionStorage.saveComment(this.comments)
-    console.log("sesKomentar", this.saveCommentToSession());
-  }
+  // saveCommentToSession() {
+  //   this.sessionStorage.saveComment(this.comments);
+  // }
 
   ngOnInit() {
     this.loggedIn = this.likeCommService.checkToken();

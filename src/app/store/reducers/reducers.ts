@@ -10,13 +10,13 @@ export const userReducer =
         case _SaveUser.AddUser:
             return {
                 ...state,
-                user: [...state.user, action.payload]
+                user: action.payload
             }
             break;
         case _SaveCity.AddCity:
             return{
                 ...state,
-                city:[...state.city, action.payload]
+                city:action.payload
             }
             break;
         case _SaveTariff.AddTariff:
