@@ -1,7 +1,6 @@
 <div *ngIf="allTariff$ | async as allTariff">
-  <ul>
-    <li *ngFor="let tariff of allTariff" (click)="selectTariff(tariff)"
-      [ngClass]="{ 'selected': selectedTariff === tariff }">
+  <ul *ngFor="let tariff of allTariff">
+    <li (click)="selectTariff(tariff)" [ngClass]="{ 'selected': tariff.id === selectedTariff.id }">
       name:{{tariff.sku}} <br>
       speed:{{tariff.speed}} <br>
       <div *ngFor="let price of tariff.priceList">
@@ -10,7 +9,5 @@
       </div>
     </li>
   </ul>
-  <button
-   [disabled]="!selectedTariff" 
-   [routerLink]="['/main']">Save</button>
+  <button [routerLink]="['/like']" [disabled]="!isTariffSelected">Next</button>
 </div>

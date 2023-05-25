@@ -16,7 +16,7 @@ export class MainComponent {
 
   cityForm: FormGroup
   allCity$: Observable<City[]>
-  selectedCity: City | null;
+  selectedCity: City | null 
   selectedStreet: Street | null;
   cityStreet = this.cityService.city;
   cityAndStreet: any;

@@ -15,6 +15,9 @@ export enum _SaveTariff{
     AddTariff = '[Tariff] Add Tariff'
 }
 
+export enum _SelectedTariff{
+    SelectTariff = '[Select] Selected Tariff'
+}
 
 export class AddUser implements Action {
     public readonly type = _SaveUser.AddUser;
@@ -31,4 +34,9 @@ export class AddTariff implements Action{
     constructor(public payload: Tariff){}
 }
 
-export type UserAction = AddUser | AddCity | AddTariff;
+export class SelectedTariff implements Action{
+    public readonly type = _SelectedTariff.SelectTariff;
+    constructor(public payload: Tariff){}
+}
+
+export type UserAction = AddUser | AddCity | AddTariff | SelectedTariff;

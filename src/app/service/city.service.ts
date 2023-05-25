@@ -16,7 +16,7 @@ export class CityService {
 
   constructor(private http: HttpClient,
     private store: Store<AppState>,
-    private sessionService: SessionService) { }
+    private sessionStorage: SessionService) { }
 
   public addCity(city: City): Observable<City> {
     return this.http.post<City>(`${BASE_URL}/api/saveCity`, city)
@@ -31,7 +31,7 @@ export class CityService {
   }
 
   saveCity(city: City) {
-    // this.sessionService.saveCityToSessionStorage(city);
+    this.sessionStorage.saveCityToSessionStorage(city);
     this.store.dispatch(new AddCity(city));
   }
 }

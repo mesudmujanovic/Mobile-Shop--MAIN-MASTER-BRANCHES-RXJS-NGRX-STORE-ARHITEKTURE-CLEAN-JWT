@@ -1,15 +1,16 @@
-import { City } from "src/app/Interface/CityInterface";
-import { Tariff } from "src/app/Interface/Tariff.interface";
-import { User } from "src/app/Interface/User.interface";
-import { SessionService } from "src/app/service/session.service";
 
 export interface SalesUserState {
-    city: City;
-    user: User;
-    tariff: Tariff;
+    city: any;
+    user: any;
+    tariff: any;
+    selectedTariff: any;
 
 }
 
 
-export const initalUserState: SalesUserState = 
-new SessionService().getInitalState();
+export const initalUserState: SalesUserState = {
+    user:[],
+    city:[],
+    tariff:[],
+    selectedTariff:[]
+}

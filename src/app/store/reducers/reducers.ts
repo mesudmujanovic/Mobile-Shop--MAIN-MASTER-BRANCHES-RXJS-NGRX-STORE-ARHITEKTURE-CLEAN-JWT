@@ -1,4 +1,4 @@
-import { UserAction, _SaveCity, _SaveTariff, _SaveUser } from '../action/action';
+import { UserAction, _SaveCity, _SaveTariff, _SaveUser, _SelectedTariff } from '../action/action';
 import { SalesUserState, initalUserState } from '../state/user.state';
 
 
@@ -24,6 +24,11 @@ export const userReducer =
                 ...state,
                 tariff: action.payload
             }
-            //tarif sacuvan tako da moze samo jedna tarifa da se izabere.. to sam uradio zbog vezbanja
+            break;
+        case _SelectedTariff.SelectTariff:
+            return{
+                ...state,
+                selectedTariff: action.payload
+            }
     }
 }

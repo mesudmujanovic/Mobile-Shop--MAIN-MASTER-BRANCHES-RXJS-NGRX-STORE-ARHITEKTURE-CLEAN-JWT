@@ -59,7 +59,7 @@ export class LikeCommComponent {
         (response) => {
           this.commentText = '';
           this.comments.push(response);
-          // this.saveCommentToSession();
+          this.saveCommentToSession();
         },
         (error) => {
           console.log('Greška pri dodavanju komentara:', error);
@@ -68,9 +68,9 @@ export class LikeCommComponent {
     }
   }
 
-  // saveCommentToSession() {
-  //   this.sessionStorage.saveComment(this.comments);
-  // }
+  saveCommentToSession() {
+    this.sessionStorage.saveCommentToSessionStorage(this.comments);
+  }
 
   ngOnInit() {
     this.loggedIn = this.likeCommService.checkToken();

@@ -18,3 +18,8 @@ export const getTariff = createSelector(
     userSelectors,
     (state: SalesUserState) => state.tariff
 )
+
+export const getSelectTariff = createSelector(
+    userSelectors,
+    (state: SalesUserState) => state.selectedTariff
+)

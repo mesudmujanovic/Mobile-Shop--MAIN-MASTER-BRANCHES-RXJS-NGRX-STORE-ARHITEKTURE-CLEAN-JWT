@@ -24,7 +24,7 @@ import { LikeCommComponent } from './component/like-comm/like-comm.component';
     TariffComponent,
     PriceComponent,
     LikeCommComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

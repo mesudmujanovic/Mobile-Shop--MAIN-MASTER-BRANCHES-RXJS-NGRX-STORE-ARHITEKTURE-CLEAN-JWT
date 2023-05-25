@@ -4,13 +4,14 @@ import { SignupComponent } from './component/signup/signup.component';
 import { LoginComponent } from './component/login/login.component';
 import { MainComponent } from './component/main/main.component';
 import { LikeCommComponent } from './component/like-comm/like-comm.component';
+import { TariffComponent } from './component/tariff/tariff.component';
 
 const routes: Routes = [
   { path: '', component: SignupComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'tariff', component: TariffComponent},
   { path: 'main', component: MainComponent },
-  { path: "like", component: LikeCommComponent },
-  { path: "tariff", component: LikeCommComponent}
+  { path: 'like', component: LikeCommComponent },
 ];
 
 @NgModule({
