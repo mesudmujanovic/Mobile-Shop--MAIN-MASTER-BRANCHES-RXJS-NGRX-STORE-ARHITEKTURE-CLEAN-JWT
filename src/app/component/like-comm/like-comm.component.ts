@@ -62,22 +62,21 @@ export class LikeCommComponent {
   }
   }
 
-  addComment() {
-  if(this.loggedIn){
+  addComment(){
+    if(this.loggedIn){
     if (this.commentText.trim() !== '') {
       this.likeCommService.addLikeComment(this.likeCount, this.dislikeCount, this.commentText).subscribe(
         (response) => {
           this.commentText = '';
           this.comments.push(response);
           this.saveCommentToSession();
+          ;
         },
         (error) => {
           console.log('Greška pri dodavanju komentara:', error);
         }
       );
     }
-  }else{
-    alert("Samo logovani korisnici mogu komentarisati")
   }
   }
 
@@ -95,6 +94,7 @@ export class LikeCommComponent {
   }
 
   ngOnInit() {
+    this.addComment()
     this.loggedIn = this.likeCommService.checkToken();
     this.getAllCo().subscribe( user =>{
       console.log(user);
