@@ -1,0 +1,30 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+form {
+    width: 250px;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+}
+
+input {
+    width: 100%;
+}
+
+.sign-text{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 20px;
+}
+  

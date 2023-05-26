@@ -1,0 +1,20 @@
+<nav class="container navbar navbar-expand-lg navbar-dark bg-dark" id="container">
+    <div class="container" style="max-width: 1100px;">
+      <button class="navbar-toggler" type="button" (click)="toggleMenu()" [ngClass]="{'show': isMenuOpen}">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngClass]="{'show': isMenuOpen}">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/login']">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['']">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/like']">Iskustva korisnika</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -14,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { TariffComponent } from './component/tariff/tariff.component';
 import { PriceComponent } from './component/price/price.component';
 import { LikeCommComponent } from './component/like-comm/like-comm.component';
+import { Wks1Component } from './page/wks1/wks1.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { LikeCommComponent } from './component/like-comm/like-comm.component';
     MainComponent,
     TariffComponent,
     PriceComponent,
-    LikeCommComponent
+    LikeCommComponent,
+    Wks1Component,
+    NavbarComponent,
+    FooterComponent
     ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+.like-container{
+    height: 80vh;
+}
+
+.like-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

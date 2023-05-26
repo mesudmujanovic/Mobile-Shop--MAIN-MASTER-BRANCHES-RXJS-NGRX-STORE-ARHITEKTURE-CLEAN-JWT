@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
-import { PathService } from 'src/app/service/path.service';
 import { SignupService } from 'src/app/service/signup.service';
 
 @Component({
@@ -17,8 +16,7 @@ export class SignupComponent {
 
   constructor(private formBuilder: FormBuilder,
     private signUpService: SignupService,
-    private router: Router,
-    private pathService: PathService) {
+    private router: Router) {
     this.postForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]

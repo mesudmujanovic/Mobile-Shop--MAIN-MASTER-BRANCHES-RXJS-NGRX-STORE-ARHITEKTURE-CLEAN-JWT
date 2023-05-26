@@ -1,14 +1,14 @@
-<div *ngIf="currentPath === '/'">SignupComponent</div>
-
-<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
-    <div>
-        <label for="username">UserName</label>
-        <input type="text" name="username" id="username" formControlName="username">
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" formControlName="password">
-    </div>
-    <button type="submit" [disabled]="!postForm.valid">Save</button>
-</form>
-
+<div class="form-container">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+        <h3 class="sign-text">Sign Up</h3>
+        <div>
+            <label for="username">UserName</label>
+            <input type="text" name="username" id="username" formControlName="username">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" formControlName="password">
+        </div>
+        <button type="submit" class="btn btn-primary form-control" [disabled]="!postForm.valid">Save</button>
+    </form>
+</div>

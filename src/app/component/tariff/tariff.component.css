@@ -2,3 +2,14 @@
     color: red;
 }
   
+.container-tariff{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+li.list-group-item:hover {
+    border: 2px solid aqua;
+  }
+  

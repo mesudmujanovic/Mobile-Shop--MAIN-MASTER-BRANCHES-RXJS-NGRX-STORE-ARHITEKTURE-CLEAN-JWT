@@ -1,20 +1,26 @@
-<div>
-  <div *ngIf="allCity$ | async as allCity ">
-    <select [(ngModel)]="selectedCity">
-      <option [ngValue]="city" *ngFor="let city of allCity"
-      (change)="onCityChange()">
-        {{city.name}}
-      </option>
-    </select>
-     </div>
-</div>
- <div *ngIf="selectedCity">
-  <h2>odaberite ulicu</h2>
-  <select [(ngModel)]="selectedStreet">
-    <option *ngFor="let street of selectedCity.streets" [ngValue]="street">
-      {{street.name}}
-    </option>
-  </select>
-<button type="submit" [disabled]="!selectedCity && !selectedStreet"
-(click)="saveStreetAndCity()">Save</button>
+<div class="main-container">
+  <div class="d-flex justify-content-center align-items-center vh-100">
+    <div>
+      <div *ngIf="allCity$ | async as allCity" class="mb-3">
+        <h3 class="main-text">Odaberite grad</h3>
+        <select class="form-select" [(ngModel)]="selectedCity">
+          <option [ngValue]="city" *ngFor="let city of allCity" (change)="onCityChange()">
+            {{ city.name }}
+          </option>
+        </select>
+      </div>
+  
+      <div *ngIf="selectedCity">
+        <h2 class="text-center">Odaberite dostupnu ulicu</h2>
+        <select class="form-select mb-3" [(ngModel)]="selectedStreet">
+          <option *ngFor="let street of selectedCity.streets" [ngValue]="street">
+            {{ street.name }}
+          </option>
+        </select>
+  
+        <button type="submit" class="btn btn-primary form-control" [disabled]="!selectedCity && !selectedStreet" (click)="saveStreetAndCity()">Save</button>
+      </div>
+    </div>
+  </div>
+  
 </div>
