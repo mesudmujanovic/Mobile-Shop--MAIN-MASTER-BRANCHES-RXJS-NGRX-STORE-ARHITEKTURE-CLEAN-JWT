@@ -1,3 +1,5 @@
+<div *ngIf="currentPath === '/'">SignupComponent</div>
+
 <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
     <div>
         <label for="username">UserName</label>

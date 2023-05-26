@@ -1,0 +1,7 @@
+.progress {
+  height: 100%;
+  width: 50%; /* ili bilo koju drugu željenu širinu */
+  background-color: red;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}

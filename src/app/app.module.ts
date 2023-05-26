@@ -15,6 +15,7 @@ import { TariffComponent } from './component/tariff/tariff.component';
 import { PriceComponent } from './component/price/price.component';
 import { LikeCommComponent } from './component/like-comm/like-comm.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,8 +33,8 @@ import { LikeCommComponent } from './component/like-comm/like-comm.component';
     ReactiveFormsModule,
     StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({maxAge:25}),
-    FormsModule
-      ],
+    FormsModule 
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })

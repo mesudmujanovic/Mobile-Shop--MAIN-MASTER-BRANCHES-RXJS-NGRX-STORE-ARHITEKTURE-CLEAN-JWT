@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
+import { PathService } from 'src/app/service/path.service';
 import { SignupService } from 'src/app/service/signup.service';
 
 @Component({
@@ -10,12 +11,14 @@ import { SignupService } from 'src/app/service/signup.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-
+  
+  currentPath: string;
   postForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
     private signUpService: SignupService,
-    private router: Router) {
+    private router: Router,
+    private pathService: PathService) {
     this.postForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -36,6 +39,10 @@ export class SignupComponent {
           console.log(error);
         })
     }
+  }
+
+  ngOnInit(){
+  
   }
 
 }
