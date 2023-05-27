@@ -26,7 +26,7 @@ export class SessionService {
   saveCityToSessionStorage(city: City) {
     const cityJson = JSON.stringify(city);
     sessionStorage.setItem('city', cityJson)
-    }
+  }
 
   getCityFromSessionStorage(): City | null {
     const cityJson = sessionStorage.getItem('city');
@@ -55,7 +55,7 @@ export class SessionService {
 
   getTariffFromSessionStorage(): any {
     const tariff = sessionStorage.getItem('selectedTariff');
-   return JSON.parse(tariff);
+    return JSON.parse(tariff);
   }
 
 }

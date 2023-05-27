@@ -7,36 +7,36 @@ export enum _SaveUser {
     AddUser = '[User] Add User'
 }
 
-export enum _SaveCity{
+export enum _SaveCity {
     AddCity = '[City] Add City'
 }
 
-export enum _SaveTariff{
+export enum _SaveTariff {
     AddTariff = '[Tariff] Add Tariff'
 }
 
-export enum _SelectedTariff{
+export enum _SelectedTariff {
     SelectTariff = '[Select] Selected Tariff'
 }
 
 export class AddUser implements Action {
     public readonly type = _SaveUser.AddUser;
-    constructor(public payload: User) {}
+    constructor(public payload: User) { }
 }
 
-export class AddCity implements Action{
+export class AddCity implements Action {
     public readonly type = _SaveCity.AddCity;
-    constructor(public payload: City){}
+    constructor(public payload: City) { }
 }
 
-export class AddTariff implements Action{
+export class AddTariff implements Action {
     public readonly type = _SaveTariff.AddTariff;
-    constructor(public payload: Tariff){}
+    constructor(public payload: Tariff) { }
 }
 
-export class SelectedTariff implements Action{
+export class SelectedTariff implements Action {
     public readonly type = _SelectedTariff.SelectTariff;
-    constructor(public payload: Tariff){}
+    constructor(public payload: Tariff) { }
 }
 
 export type UserAction = AddUser | AddCity | AddTariff | SelectedTariff;

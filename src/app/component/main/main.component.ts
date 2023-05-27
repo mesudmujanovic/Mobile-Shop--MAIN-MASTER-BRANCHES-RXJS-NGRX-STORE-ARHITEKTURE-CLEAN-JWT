@@ -5,7 +5,6 @@ import { Observable, catchError, of, tap } from 'rxjs';
 import { City } from 'src/app/Interface/CityInterface';
 import { Street } from 'src/app/Interface/Street.interface';
 import { CityService } from 'src/app/service/city.service';
-import { SessionService } from 'src/app/service/session.service';
 
 @Component({
   selector: 'app-main',
@@ -16,21 +15,20 @@ export class MainComponent {
 
   cityForm: FormGroup
   allCity$: Observable<City[]>
-  selectedCity: City | null 
+  selectedCity: City | null
   selectedStreet: Street | null;
   cityStreet = this.cityService.city;
   cityAndStreet: any;
 
   constructor(private formBudiler: FormBuilder,
     private cityService: CityService,
-    private sessionService: SessionService,
     private router: Router) {
   };
 
   onCityChange() {
     if (this.selectedCity) {
       const filterCity = this.selectedCity.streets;
-      this.selectedStreet = filterCity.length > 0 ? filterCity[0] : null;  
+      this.selectedStreet = filterCity.length > 0 ? filterCity[0] : null;
     } else {
       this.selectedStreet = null;
     }
@@ -44,8 +42,6 @@ export class MainComponent {
       }
       this.router.navigate(['/tariff'])
       this.cityService.saveCity(this.cityAndStreet);
-      console.log(this.cityAndStreet);
-      
     }
   }
 

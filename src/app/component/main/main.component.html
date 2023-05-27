@@ -9,7 +9,7 @@
           </option>
         </select>
       </div>
-  
+
       <div *ngIf="selectedCity">
         <h2 class="text-center">Odaberite dostupnu ulicu</h2>
         <select class="form-select mb-3" [(ngModel)]="selectedStreet">
@@ -17,10 +17,11 @@
             {{ street.name }}
           </option>
         </select>
-  
-        <button type="submit" class="btn btn-primary form-control" [disabled]="!selectedCity && !selectedStreet" (click)="saveStreetAndCity()">Save</button>
+
+        <button type="submit" class="btn btn-primary form-control" [disabled]="!selectedCity && !selectedStreet"
+          (click)="saveStreetAndCity()">Save</button>
       </div>
     </div>
   </div>
-  
+
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, catchError, of } from 'rxjs';
+import { Observable, catchError, of, tap } from 'rxjs';
 import { LikeComm } from 'src/app/Interface/LikeComm.interface';
 import { LikeComService } from 'src/app/service/like-com.service';
 import { User } from 'src/app/Interface/User.interface';
@@ -27,66 +27,66 @@ export class LikeCommComponent {
   }
 
   like(): void {
-  if(this.loggedIn){
-    if (!this.isLiked) {
-      if (this.isDisliked) {
-        this.dislikeCount--;
-        this.isDisliked = false;
-      }
-      this.likeCount++;
-      this.isLiked = true;
-    } else {
-      this.likeCount--;
-      this.isLiked = false;
-    }
-  }else{
-    alert("Samo logovani korisnici mogu lajkovati")
-  }
-  }
-
-  dislike(): void {
-  if(this.loggedIn){
-    if (!this.isDisliked) {
-      if (this.isLiked) {
+    if (this.loggedIn) {
+      if (!this.isLiked) {
+        if (this.isDisliked) {
+          this.dislikeCount--;
+          this.isDisliked = false;
+        }
+        this.likeCount++;
+        this.isLiked = true;
+      } else {
         this.likeCount--;
         this.isLiked = false;
       }
-      this.dislikeCount++;
-      this.isDisliked = true;
     } else {
-      this.dislikeCount--;
-      this.isDisliked = false;
+      alert("Samo logovani korisnici mogu lajkovati")
     }
-  }else{
-    alert("Samo logovani korisnici mogu dislajkovati")
-  }
   }
 
-  addComment(){
-    if(this.loggedIn){
-    if (this.commentText.trim() !== '') {
-      this.likeCommService.addLikeComment(this.likeCount, this.dislikeCount, this.commentText).subscribe(
-        (response) => {
-          this.commentText = '';
-          this.comments.push(response);
-          this.saveCommentToSession();
-          ;
-        },
-        (error) => {
-          console.log('Greška pri dodavanju komentara:', error);
+  dislike(): void {
+    if (this.loggedIn) {
+      if (!this.isDisliked) {
+        if (this.isLiked) {
+          this.likeCount--;
+          this.isLiked = false;
         }
-      );
+        this.dislikeCount++;
+        this.isDisliked = true;
+      } else {
+        this.dislikeCount--;
+        this.isDisliked = false;
+      }
+    } else {
+      alert("Samo logovani korisnici mogu dislajkovati")
     }
   }
+
+  addComment() {
+    if (this.loggedIn) {
+      if (this.commentText.trim() !== '') {
+        this.likeCommService.addLikeComment(this.likeCount, this.dislikeCount, this.commentText).pipe(
+          tap(response => {
+            this.commentText = '';
+            this.comments.push(response);
+            this.saveCommentToSession();
+          })
+        ).subscribe(() => {
+          console.log("error subs");
+        })
+      }
+    } else {
+      alert("samo logovani korisnici mogu komentarisati i lajkovati")
+    }
   }
 
   saveCommentToSession() {
     this.sessionStorage.saveCommentToSessionStorage(this.comments);
   }
 
-  getAllCo(): Observable<LikeComm[]>{
-   return this.allComm$ = this.likeCommService.getAllCom().pipe(
-      catchError( error =>{
+  getAllCo(): Observable<LikeComm[]> {
+    return this.allComm$ = this.likeCommService.getAllCom().pipe(
+      catchError(error => {
         console.log("error");
         return of([])
       })
@@ -94,9 +94,8 @@ export class LikeCommComponent {
   }
 
   ngOnInit() {
-    this.addComment()
     this.loggedIn = this.likeCommService.checkToken();
-    this.getAllCo().subscribe( user =>{
+    this.getAllCo().subscribe(user => {
       console.log(user);
     })
     const retrievedUserComment = this.sessionStorage.getUserFromSessionStorage();

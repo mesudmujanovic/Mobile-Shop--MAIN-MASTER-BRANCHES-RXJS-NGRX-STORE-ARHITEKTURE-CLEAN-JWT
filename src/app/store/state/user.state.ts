@@ -7,10 +7,9 @@ export interface SalesUserState {
 
 }
 
-
 export const initalUserState: SalesUserState = {
-    user:[],
-    city:[],
-    tariff:[],
-    selectedTariff:[]
+    user: [],
+    city: [],
+    tariff: [],
+    selectedTariff: []
 }

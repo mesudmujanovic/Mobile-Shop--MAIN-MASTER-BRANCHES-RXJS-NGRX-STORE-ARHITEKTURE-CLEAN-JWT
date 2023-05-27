@@ -10,8 +10,7 @@ import { SignupService } from 'src/app/service/signup.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-  
-  currentPath: string;
+
   postForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
@@ -32,16 +31,14 @@ export class SignupComponent {
           console.log("added", response);
           this.router.navigate(['/login']);
         })
-      ) .subscribe(() => { },
+      ).subscribe(() => { },
         error => {
           console.log(error);
         })
     }
   }
 
-  ngOnInit(){
-  
-  }
+  ngOnInit() { }
 
 }
 

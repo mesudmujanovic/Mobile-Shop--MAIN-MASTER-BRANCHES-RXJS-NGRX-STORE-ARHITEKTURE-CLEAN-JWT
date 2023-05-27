@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable} from 'rxjs';
 import { LikeComm } from '../Interface/LikeComm.interface';
 import { BASE_URL } from '../const/url';
-import { ReturnStatement } from '@angular/compiler';
-
 @Injectable({
   providedIn: 'root'
 })
