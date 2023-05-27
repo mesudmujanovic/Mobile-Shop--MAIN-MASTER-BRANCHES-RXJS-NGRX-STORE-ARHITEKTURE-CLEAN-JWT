@@ -19,8 +19,8 @@ public class CommLikeController {
     @Autowired
     private CommentLikeService commentLikeService;
 
-    @PostMapping("/com-like")
-    public ResponseEntity<CommentLikeResponse> saveCommLike(CommentLikeRequest commentLikeRequest){
+    @PostMapping("/comLike")
+    public ResponseEntity<CommentLikeResponse> saveCommLike(@RequestBody CommentLikeRequest commentLikeRequest){
         CommentLikeDto commentLikeDto = CommentLikeDto.fromRequestToDto(commentLikeRequest);
         CommentLikeDto saveComLike = commentLikeService.saveCommentLike(commentLikeDto);
         return ResponseEntity.ok(saveComLike.fromDtoToResponse());
