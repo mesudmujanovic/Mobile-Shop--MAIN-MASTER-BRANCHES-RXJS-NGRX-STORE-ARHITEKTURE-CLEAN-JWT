@@ -1,7 +1,7 @@
 package mobileshop.Security.Services;
 
-import mobileshop.Security.jwt.AuthEntryPointJwt;
-import mobileshop.Security.jwt.AuthTokenFilter;
+import mobileshop.Security.Jwt.AuthEntryPointJwt;
+import mobileshop.Security.Jwt.AuthTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

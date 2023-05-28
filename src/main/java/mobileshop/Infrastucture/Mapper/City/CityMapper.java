@@ -1,7 +1,7 @@
 package mobileshop.Infrastucture.Mapper.City;
 
 import mobileshop.Entity.City;
-import mobileshop.Infrastucture.DTO.CityDto;
+import mobileshop.Infrastucture.Dto.CityDto;
 import mobileshop.Infrastucture.Mapper.Street.StreetMapper;
 import mobileshop.Intergration.DtoMapper;
 

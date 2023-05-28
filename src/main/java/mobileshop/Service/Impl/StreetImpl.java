@@ -1,7 +1,7 @@
 package mobileshop.Service.Impl;
 
 import mobileshop.Entity.Street;
-import mobileshop.Infrastucture.DTO.StreetDto;
+import mobileshop.Infrastucture.Dto.StreetDto;
 import mobileshop.Infrastucture.Mapper.City.CityMapper;
 import mobileshop.Infrastucture.Mapper.Street.StreetDtoMapper;
 import mobileshop.Infrastucture.Mapper.Street.StreetMapper;

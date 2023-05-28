@@ -1,7 +1,7 @@
 package mobileshop.Service.Impl;
 
 import mobileshop.Entity.Tariff;
-import mobileshop.Infrastucture.DTO.TariffDto;
+import mobileshop.Infrastucture.Dto.TariffDto;
 import mobileshop.Infrastucture.Mapper.Tariff.TariffDtoMapper;
 import mobileshop.Infrastucture.Mapper.Tariff.TariffMapper;
 import mobileshop.Repository.TariffRepository;

@@ -1,7 +1,7 @@
 package mobileshop.Controller.Availibility.Street;
 
 
-import mobileshop.Infrastucture.DTO.StreetDto;
+import mobileshop.Infrastucture.Dto.StreetDto;
 import mobileshop.Infrastucture.Request.StreetRequest;
 import mobileshop.Infrastucture.Response.StreetResponse;
 import mobileshop.Service.StreetService;

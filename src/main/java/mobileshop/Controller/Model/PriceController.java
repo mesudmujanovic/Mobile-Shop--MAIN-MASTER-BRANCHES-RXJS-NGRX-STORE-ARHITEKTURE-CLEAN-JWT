@@ -1,8 +1,7 @@
 package mobileshop.Controller.Model;
 
 
-import mobileshop.Entity.Price;
-import mobileshop.Infrastucture.DTO.PriceDto;
+import mobileshop.Infrastucture.Dto.PriceDto;
 import mobileshop.Infrastucture.Request.PriceRequest;
 import mobileshop.Infrastucture.Response.PriceResponse;
 import mobileshop.Service.PriceService;

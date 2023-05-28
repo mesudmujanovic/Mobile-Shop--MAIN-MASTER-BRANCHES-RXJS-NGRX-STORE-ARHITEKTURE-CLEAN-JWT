@@ -1,6 +1,6 @@
 package mobileshop.Service;
 
-import mobileshop.Infrastucture.DTO.TariffDto;
+import mobileshop.Infrastucture.Dto.TariffDto;
 
 import java.util.List;
 

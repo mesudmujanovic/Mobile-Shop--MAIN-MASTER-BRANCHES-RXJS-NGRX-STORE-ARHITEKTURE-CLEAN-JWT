@@ -1,4 +1,4 @@
-package mobileshop.Infrastucture.DTO;
+package mobileshop.Infrastucture.Dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

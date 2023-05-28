@@ -1,8 +1,7 @@
 package mobileshop.Infrastucture.Request;
 
 import lombok.Data;
-import mobileshop.Entity.Price;
-import mobileshop.Infrastucture.DTO.PriceDto;
+import mobileshop.Infrastucture.Dto.PriceDto;
 
 import java.util.List;
 

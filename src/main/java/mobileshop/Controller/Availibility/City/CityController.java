@@ -1,7 +1,7 @@
 package mobileshop.Controller.Availibility.City;
 
 
-import mobileshop.Infrastucture.DTO.CityDto;
+import mobileshop.Infrastucture.Dto.CityDto;
 import mobileshop.Infrastucture.Request.CityRequest;
 import mobileshop.Infrastucture.Response.CityResponse;
 import mobileshop.Service.CityService;

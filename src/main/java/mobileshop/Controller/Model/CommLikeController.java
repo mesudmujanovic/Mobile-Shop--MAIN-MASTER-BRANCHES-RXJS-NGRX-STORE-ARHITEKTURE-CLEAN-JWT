@@ -1,6 +1,6 @@
 package mobileshop.Controller.Model;
 
-import mobileshop.Infrastucture.DTO.CommentLikeDto;
+import mobileshop.Infrastucture.Dto.CommentLikeDto;
 import mobileshop.Infrastucture.Request.CommentLikeRequest;
 import mobileshop.Infrastucture.Response.CommentLikeResponse;
 import mobileshop.Service.CommentLikeService;

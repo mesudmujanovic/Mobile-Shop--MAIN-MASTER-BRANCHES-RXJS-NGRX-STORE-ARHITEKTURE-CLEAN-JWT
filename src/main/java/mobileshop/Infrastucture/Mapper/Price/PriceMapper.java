@@ -1,7 +1,7 @@
 package mobileshop.Infrastucture.Mapper.Price;
 
 import mobileshop.Entity.Price;
-import mobileshop.Infrastucture.DTO.PriceDto;
+import mobileshop.Infrastucture.Dto.PriceDto;
 import mobileshop.Intergration.DtoMapper;
 
 public enum PriceMapper implements DtoMapper<Price, PriceDto> {

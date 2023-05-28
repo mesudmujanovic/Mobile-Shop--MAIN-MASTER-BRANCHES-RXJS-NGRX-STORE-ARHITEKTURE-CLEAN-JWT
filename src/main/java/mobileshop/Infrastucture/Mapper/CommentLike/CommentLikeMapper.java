@@ -1,7 +1,7 @@
 package mobileshop.Infrastucture.Mapper.CommentLike;
 
 import mobileshop.Entity.CommentLike;
-import mobileshop.Infrastucture.DTO.CommentLikeDto;
+import mobileshop.Infrastucture.Dto.CommentLikeDto;
 import mobileshop.Intergration.DtoMapper;
 
 public enum CommentLikeMapper implements DtoMapper<CommentLike, CommentLikeDto> {

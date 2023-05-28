@@ -1,12 +1,12 @@
 package mobileshop.Controller.Auth;
 import mobileshop.Service.UserService;
-import mobileshop.Infrastucture.DTO.UserDto;
+import mobileshop.Infrastucture.Dto.UserDto;
 import mobileshop.Infrastucture.Request.User.LoginRequest;
 import mobileshop.Infrastucture.Request.User.SignupRequest;
 import mobileshop.Infrastucture.Response.UserJwt.JwtResponse;
 import mobileshop.Infrastucture.Response.UserJwt.MessageResponse;
 import mobileshop.Security.Services.UserDetailsImpl;
-import mobileshop.Security.jwt.JwtUtils;
+import mobileshop.Security.Jwt.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;

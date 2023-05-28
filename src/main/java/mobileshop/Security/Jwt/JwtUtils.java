@@ -1,4 +1,4 @@
-package mobileshop.Security.jwt;
+package mobileshop.Security.Jwt;
 import io.jsonwebtoken.*;
 import mobileshop.Security.Services.UserDetailsImpl;
 import org.slf4j.Logger;

@@ -1,12 +1,11 @@
 package mobileshop.Service.Impl;
 
 import mobileshop.Entity.Price;
-import mobileshop.Infrastucture.DTO.PriceDto;
+import mobileshop.Infrastucture.Dto.PriceDto;
 import mobileshop.Infrastucture.Mapper.Price.PriceDtoMapper;
 import mobileshop.Infrastucture.Mapper.Price.PriceMapper;
 import mobileshop.Infrastucture.Mapper.Tariff.TariffMapper;
 import mobileshop.Repository.PriceRepository;
-import mobileshop.Repository.TariffRepository;
 import mobileshop.Service.PriceService;
 import mobileshop.Service.TariffService;
 import org.springframework.beans.factory.annotation.Autowired;

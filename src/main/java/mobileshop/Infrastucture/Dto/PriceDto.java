@@ -1,4 +1,4 @@
-package mobileshop.Infrastucture.DTO;
+package mobileshop.Infrastucture.Dto;
 
 import lombok.Data;
 import mobileshop.Infrastucture.Request.PriceRequest;

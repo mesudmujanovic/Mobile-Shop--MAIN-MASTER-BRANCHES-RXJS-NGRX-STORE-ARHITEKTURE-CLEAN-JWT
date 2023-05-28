@@ -1,7 +1,7 @@
 package mobileshop.Infrastucture.Response;
 
 import lombok.Data;
-import mobileshop.Infrastucture.DTO.PriceDto;
+import mobileshop.Infrastucture.Dto.PriceDto;
 
 import java.util.List;
 

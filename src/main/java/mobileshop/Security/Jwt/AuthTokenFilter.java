@@ -1,4 +1,4 @@
-package mobileshop.Security.jwt;
+package mobileshop.Security.Jwt;
 import mobileshop.Security.Services.UserDetailsServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

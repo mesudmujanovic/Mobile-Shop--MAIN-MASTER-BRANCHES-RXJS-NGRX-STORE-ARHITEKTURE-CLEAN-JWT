@@ -4,7 +4,7 @@ package mobileshop.Infrastucture.Request;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import mobileshop.Infrastucture.DTO.StreetDto;
+import mobileshop.Infrastucture.Dto.StreetDto;
 
 import java.util.List;
 

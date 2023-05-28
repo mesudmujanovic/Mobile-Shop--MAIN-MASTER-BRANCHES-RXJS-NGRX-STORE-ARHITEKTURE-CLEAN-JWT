@@ -1,6 +1,6 @@
 package mobileshop.Controller.Model;
 
-import mobileshop.Infrastucture.DTO.TariffDto;
+import mobileshop.Infrastucture.Dto.TariffDto;
 import mobileshop.Infrastucture.Request.TariffRequest;
 import mobileshop.Infrastucture.Response.TariffResponse;
 import mobileshop.Service.TariffService;

@@ -1,6 +1,6 @@
 package mobileshop.Service;
 
-import mobileshop.Infrastucture.DTO.CommentLikeDto;
+import mobileshop.Infrastucture.Dto.CommentLikeDto;
 
 import java.util.List;
 
