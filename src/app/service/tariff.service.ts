@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { Observable} from 'rxjs';
 import { Tariff } from '../Interface/Tariff.interface';
 import { BASE_URL } from '../const/url';
 import { Store } from '@ngrx/store';

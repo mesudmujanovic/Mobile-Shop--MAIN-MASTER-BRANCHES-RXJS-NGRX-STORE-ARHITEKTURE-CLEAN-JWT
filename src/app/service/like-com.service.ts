@@ -21,13 +21,12 @@ export class LikeComService {
     }
   };
 
-  addLikeComment(likeCount: number, dislike: number, commentText: string): Observable<LikeComm>{
+  addLikeComment(likeCount: number, dislike: number, commentText: string, name: string, userId: number): Observable<LikeComm>{
     if (!this.checkToken()) {
       throw new Error("Nemate pristup. Morate se prijaviti da biste lajkovali, dislajkovali i ostavljali komentare.");
     }
-
-    const likeDislikeComment = { likeCount, dislike, commentText };
-    return this.http.post<LikeComm>(`${BASE_URL}/api/comLike`, likeDislikeComment);
+    const likeDislikeComment = { likeCount, dislike, commentText, name };
+    return this.http.post<LikeComm>(`${BASE_URL}/api/comLike/user/${userId}`, likeDislikeComment);
   }
 
   getAllCom(): Observable<LikeComm[]>{

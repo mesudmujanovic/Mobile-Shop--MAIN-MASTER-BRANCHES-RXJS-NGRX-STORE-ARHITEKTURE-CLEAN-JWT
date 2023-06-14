@@ -1,18 +1,20 @@
-<div *ngIf="allTariff$ | async as allTariff" class="container container-tariff text-center">
-  <div class="row">
-    <div class="col-12">
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let tariff of allTariff" (click)="selectTariff(tariff)"
-          [ngClass]="{ 'selected': tariff.id === selectedTariff.id }">
-          <h5 class="mb-3">Name: {{ tariff.sku }}</h5>
-          <p>Speed: {{ tariff.speed }}</p>
-          <div *ngFor="let price of tariff.priceList">
-            <p>Price: {{ price.price }}</p>
-            <p>Contact Duration: {{ price.contactDuration }} Month</p>
+<div class="container">
+  <div *ngIf="allTariff$ | async as allTariff" class="container container-tariff text-center">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let tariff of allTariff" (click)="selectTariff(tariff)">
+        <div class="card mb-3" [ngClass]="{ 'selected': tariff.id === selectedTariff.id }">
+          <div class="card-body">
+            <h5 class="card-title">Name: {{ tariff.sku }}</h5>
+            <p class="card-text">Speed: {{ tariff.speed }}</p>
+            <div *ngFor="let price of tariff.priceList">
+              <p>Price: {{ price.price }}</p>
+              <p>Contact Duration: {{ price.contactDuration }} Month</p>
+            </div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
     <button [routerLink]="['/like']" class="btn btn-primary mt-3" [disabled]="!isTariffSelected">Next</button>
   </div>
+  
 </div>

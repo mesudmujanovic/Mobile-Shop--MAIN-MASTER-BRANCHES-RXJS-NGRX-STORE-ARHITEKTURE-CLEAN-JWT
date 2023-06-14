@@ -17,6 +17,7 @@ import { LikeCommComponent } from './component/like-comm/like-comm.component';
 import { Wks1Component } from './page/wks1/wks1.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { FooterComponent } from './layout/footer/footer.component';
     ReactiveFormsModule,
     StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({maxAge:25}),
-    FormsModule 
+    FormsModule,
+    CommonModule
    ],
   providers: [],
   bootstrap: [AppComponent]

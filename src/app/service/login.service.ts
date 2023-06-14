@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../Interface/User.interface';
@@ -8,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { getUser } from '../store/selectors/selector';
 import { AddUser } from '../store/action/action';
 import { SessionService } from './session.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'

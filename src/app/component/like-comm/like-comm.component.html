@@ -18,17 +18,20 @@
       </div>
     </div>
 
-    <div *ngIf="comments">
+    <div *ngIf="allComm$ | async as allComm">
       <div class="row">
-        <div class="col-3" *ngFor="let com of comments">
+        <div class="col-12" *ngFor="let com of allComm">
           <div class="card">
             <div class="card-body text-center">
-              <h1>{{ com.commentText }}</h1>
+              <h1>Comment:{{com.commentText }}</h1>
+              <h1> Name:{{com.name}}</h1>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> 
+
+  
 
 
 

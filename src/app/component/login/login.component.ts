@@ -5,6 +5,8 @@ import { Observable, tap } from 'rxjs';
 import { User } from 'src/app/Interface/User.interface';
 import { LoginService } from 'src/app/service/login.service';
 import { SessionService } from '../../service/session.service';
+import { Store } from '@ngrx/store';
+import { getUser } from 'src/app/store/selectors/selector';
 
 @Component({
   selector: 'app-login',
@@ -15,11 +17,13 @@ export class LoginComponent {
 
   loginUser$: Observable<User[]>;
   loginForm: FormGroup
+  user$: Observable<User[]>;
 
   constructor(private formBuilder: FormBuilder,
     private loginService: LoginService,
     private router: Router,
-    private sessionService: SessionService) { }
+    private sessionService: SessionService,
+    private store:Store) { }
 
   onLogin() {
     if (this.loginForm.valid) {
@@ -29,8 +33,10 @@ export class LoginComponent {
         tap(response => {
           console.log("login", response);
           const token = response.token;
-          localStorage.setItem('token', token);
-          console.log('token', token);
+          const username = response.username;
+          const userId = response.id
+          localStorage.setItem('name', username);
+          localStorage.setItem('token', token);          
           this.router.navigate(['/main']);
         })
       ).subscribe(() => {
@@ -58,7 +64,13 @@ export class LoginComponent {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
-    })
+    });
+    this.user$ = this.store.select(getUser)
+    this.user$.subscribe(
+      user => {
+        console.log("select",user);
+      }
+    )
   };
 
   checkToken() {

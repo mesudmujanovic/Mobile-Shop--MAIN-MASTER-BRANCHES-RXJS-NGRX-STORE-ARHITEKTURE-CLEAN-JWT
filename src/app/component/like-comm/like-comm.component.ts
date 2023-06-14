@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, catchError, of, tap } from 'rxjs';
+import { Observable, catchError, of, switchMap, tap } from 'rxjs';
 import { LikeComm } from 'src/app/Interface/LikeComm.interface';
 import { LikeComService } from 'src/app/service/like-com.service';
 import { User } from 'src/app/Interface/User.interface';
@@ -65,12 +65,14 @@ export class LikeCommComponent {
   addComment() {
     if (this.loggedIn) {
       if (this.commentText.trim() !== '') {
-        this.likeCommService.addLikeComment(this.likeCount, this.dislikeCount, this.commentText).pipe(
+        const userId =+ localStorage.getItem('user');
+        const name = localStorage.getItem('name');
+        this.likeCommService.addLikeComment(this.likeCount, this.dislikeCount, this.commentText, name, userId).pipe(
           tap(response => {
             this.commentText = '';
-            this.comments.push(response);
             this.saveCommentToSession();
-          })
+          }),
+          switchMap( () => this.getAllCo())
         ).subscribe(() => {
           console.log("error subs");
         })

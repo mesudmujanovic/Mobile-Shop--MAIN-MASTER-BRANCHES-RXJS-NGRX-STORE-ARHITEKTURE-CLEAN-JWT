@@ -4,5 +4,5 @@ import { AppState } from "../state/app.state";
 
 
 export const appReducers: ActionReducerMap< AppState, any > = {
-    user: userReducer
+    allInfo: userReducer
 }
